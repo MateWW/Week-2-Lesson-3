@@ -48,9 +48,15 @@ if((typeof fetch === "function"))
 
 function renderItems(that,data){
     that=$(that);
-    var idd=parseInt(that.data("id"),10);
-    console.log(idd);
+    var idd=parseInt(that.data("id"),10)||0;
+    if(data.length==idd)
+    {
+        idd=0;
+    }
     that.data("id",idd+1);
+
+
+    that.empty();
 
     var v=JSON.stringify(data[idd],function(k,v){
         var li = $("<li></li>"),
@@ -66,6 +72,7 @@ function renderItems(that,data){
 }
 fetch("https://jsonplaceholder.typicode.com/users",function(data){
     var dane=JSON.parse(data);
+
     setInterval(function(){
         $(".show").fadeOut(300).queue(function(next){
             renderItems(this,dane);
