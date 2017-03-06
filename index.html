@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajaxowy polyfill dla funkcji fetch</title>
+	<meta charset="utf-8">
+	<style>
+		body{
+			margin:0;
+			padding: 0;
+			width:100%;
+			background:#333333;
+		}
+		.show{
+			width:80%;
+			margin:0 auto;
+			list-style:none;
+			padding:0;
+			margin-top:25px;
+			color:#ffffff;
+			font-size:24px;
+
+		}
+		.show li{
+			width:100%;
+			margin-top:10px;
+		}
+		.show li:after{
+			content: '';
+			display:block;
+			height:2px;
+			width:100%;
+			background-color:#ffffff;
+		}
+		.show li span{
+			display:inline-block;
+			width:49%;
+
+		}
+		.show li span:nth-of-type(1){
+			text-align: right;
+			Color:#cccccc;
+		}
+		.show li span:nth-of-type(1):after{
+			content:" : ";
+		}
+	</style>
+</head>
+<body>
+	<ul class="show">
+		<li>
+			<span>123</span>
+			<span>456</span>
+		</li>
+		<li>
+			<span>123</span>
+			<span>456</span>
+		</li>
+	</ul>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
